@@ -7,7 +7,7 @@ def create_excel_file(file_name):
         "Id":[1,2,3],
         "Name": ["Amit", "Boby", "Charan"],
         "Age": [25, 30, 20],
-        "City": ["pune", "mumbai", "nagpur"]
+        "City_name": ["pune", "mumbai", "nagpur"]
     }
 
     df = pd.DataFrame(data)
@@ -61,7 +61,7 @@ def append_row(file_name,Id,Name,Age,City):
     except Exception as e:
         print (e)
     else:
-        new_data = {'Id':[Id], 'Name': [Name], 'Age': [Age], 'City':[City]} 
+        new_data = {'Id':[Id], 'Name': [Name], 'Age': [Age], 'City_name':[City]} 
         new_df = pd.DataFrame(new_data)
         combined_df = pd.concat([df, new_df], ignore_index=True)
         combined_df.to_excel(file_name, index=False)
@@ -69,7 +69,6 @@ def append_row(file_name,Id,Name,Age,City):
 
         print("----------------------------------------------")
         print()
-
 
 
 
@@ -82,7 +81,7 @@ update_cell(file,1,3,20)
 read_excel_file(file)
 append_row(file,Name="alice", Id=6, Age=34, City="pune")
 read_excel_file(file)
-update_col_name(file,"City","city_name")
+update_col_name(file,"City_name","City")
 read_excel_file(file)
 
 
