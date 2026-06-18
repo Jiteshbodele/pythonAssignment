@@ -31,7 +31,7 @@ def create_db(host,port,dbname,user,password,new_dbname):
         exists = cur.fetchone()
 
         if not exists:
-            create_db_query=f"create database if not exists {new_dbname};"
+            create_db_query=f"create database {new_dbname};"
             cur.execute(create_db_query)
             print("Database created")
         else:
@@ -169,14 +169,15 @@ new_password="12345"
 excel_file_name="file.xlsx"
 export_file_name="export.xlsx"
 
+if __name__=="__main__":
 
-create_db(host=host, port=port,dbname=dbname,user=user,password=password,new_dbname=new_dbname)
+    create_db(host=host, port=port,dbname=dbname,user=user,password=password,new_dbname=new_dbname)
 
-create_user_for_db(host=host,port=port,dbname=dbname,user=user,password=password,new_dbname=new_dbname,new_user=new_user,new_password=new_password)
+    create_user_for_db(host=host,port=port,dbname=dbname,user=user,password=password,new_dbname=new_dbname,new_user=new_user,new_password=new_password)
 
-excel_to_postgres(host=host,port=port,dbname=new_dbname,user=new_user,password=new_password,excel_file=excel_file_name)
+    excel_to_postgres(host=host,port=port,dbname=new_dbname,user=new_user,password=new_password,excel_file=excel_file_name)
 
-postgres_to_excel(host=host,port=port,dbname=new_dbname,user=new_user,password=new_password,export_file=export_file_name)
+    postgres_to_excel(host=host,port=port,dbname=new_dbname,user=new_user,password=new_password,export_file=export_file_name)
 
 
 

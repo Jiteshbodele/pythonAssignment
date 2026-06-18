@@ -75,13 +75,14 @@ def append_row(file_name,Id,Name,Age,City):
 
 file='file.xlsx'
 
-create_excel_file(file)
-read_excel_file(file)
-update_cell(file,1,3,20)
-read_excel_file(file)
-append_row(file,Name="alice", Id=6, Age=34, City="pune")
-read_excel_file(file)
-update_col_name(file,"City_name","City")
-read_excel_file(file)
+if __name__ == "__main__":
+    create_excel_file(file)
+    read_excel_file(file)
+    update_cell(file,1,3,20)
+    read_excel_file(file)
+    append_row(file,Name="alice", Id=6, Age=34, City="pune")
+    read_excel_file(file)
+    update_col_name(file,"City_name","City")
+    read_excel_file(file)
 
 
