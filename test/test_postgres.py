@@ -1,6 +1,5 @@
 from src.postgres import connect_db, create_db, create_user_for_db, postgres_to_excel, excel_to_postgres
 
-import psycopg2
 
 
 host="localhost"
