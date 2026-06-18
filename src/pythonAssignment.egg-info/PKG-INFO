@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: pythonAssignment
-Version: 1.0
-Requires-Dist: psycopg2-binary
-Requires-Dist: pandas
-Requires-Dist: openpyxl
-Provides-Extra: pytest
-Requires-Dist: pytest; extra == "pytest"
